@@ -1,0 +1,87 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #454545;
+  /* 博客内容标题太挤了，给它设置一个行高 */
+  line-height: 1.7;
+
+  
+}
+a,body{
+  color: #eee;
+}
+a{
+  text-decoration: none;
+}
+.side-bar{
+  float: left;
+  width:20%;
+  position: fixed;
+}
+.side-bar > *{
+  /* 给side-bar里面所有的子元素（三个div)都设置一个边距 */
+padding: 10px 15px;
+}
+.side-bar .nav a,
+.side-bar .tag-list a{
+  display: block;
+  padding: 5px;
+  color: #888;
+  transition: color 200ms;
+}
+.side-bar .nav a{
+  font-weight: 700;
+}
+.side-bar .nav a:hover,
+.side-bar .tag-list a:hover{
+  color: #eee;
+}
+.main{
+  float: right;
+  width: 80%;
+  
+  color:#454545;
+}
+.header .logo{
+  /* 给博客内容设置行高后，logo被拉长，所以给它设置一个一倍行高 */
+  line-height: 1;
+  border: 5px solid #eee;
+  padding: 10px 20px;
+  font-size: 30px;
+  /* span是内联元素，转化成inline-block后才能使设置宽高padding、margin */
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.article-list,.article{
+  margin-right: 30%;
+  background-color: white;
+  padding: 20px 30px;
+}
+.article-list .item{
+  margin: 24px;
+}
+.article-list .item .title,
+.article .title{
+  color: #454545;
+  font-size: 23px;
+  font-weight: 700px;
+  /* padding: 10px 0; */
+  /* margin:10px 0; */
+  /* border:3px solid red; */
+}
+.article-list .item .status,
+.article .status{
+  font-size: 13px;
+  color: #ccc;
+  /* margin:10px 0; */
+}
+/* 既然title和status都有margin且值一样，那么就把它单独拿出来，尽量不要出现重复,当拷贝样式的时候就要有封装的意识 */
+.article-list .item > *,
+.article > *{
+  margin: 10px 0;
+}
+#menu-checkbox,
+#menu-toggle{
+  display: none;
+}
